@@ -4,10 +4,13 @@ import userRouter from './routers/userRouter.js'
 import authenticate from './middlewares/authenticate.js'
 import productRouter from './routers/productRouter.js'
 import dotenv from "dotenv"
+import dns from "node:dns";
+
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 dotenv.config()
 
-const mongoDBURI = process.env.MONGO_URI
+const mongoDBURI = "mongodb+srv://admin:1234@cluster0.lylqmhs.mongodb.net/?appName=Cluster0"
 
 mongoose.connect(mongoDBURI).then(
     ()=>{
