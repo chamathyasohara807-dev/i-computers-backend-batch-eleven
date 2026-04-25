@@ -10,7 +10,7 @@ dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 dotenv.config()
 
-const mongoDBURI = "mongodb+srv://admin:1234@cluster0.lylqmhs.mongodb.net/?appName=Cluster0"
+const mongoDBURI = process.env.MONGO_URI
 
 mongoose.connect(mongoDBURI).then(
     ()=>{
